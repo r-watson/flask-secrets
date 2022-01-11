@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+from flask_bootstrap import Bootstrap
 import os
 from flask_wtf import FlaskForm
 from wtforms import PasswordField, EmailField, SubmitField
@@ -13,6 +14,8 @@ class LoginForm(FlaskForm):
 
 app = Flask(__name__)
 app.secret_key = os.urandom(12)
+Bootstrap(app)
+
 
 
 @app.route("/")
